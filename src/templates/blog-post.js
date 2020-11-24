@@ -45,7 +45,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        {/* <Bio /> */}
 
         <ul
           style={{
@@ -71,7 +71,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        {/* <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} /> */}
       </Layout>
     )
   }

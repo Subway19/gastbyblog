@@ -88,22 +88,22 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
-    let subscribeComponent = (
-      <div style={this.subscribeStyle()}>
-        <div style={{alignItems: 'center'}}>{this.state.text}</div>
-      </div>
-    );
-    if (! this.state.subscribed) {
-      subscribeComponent = (
-        <div style={this.subscribeStyle()}>
-          <div style={{alignItems: 'center'}}>{this.state.text}</div>
-          <form onSubmit={this._handleSubmit} style={this.formStyle()}>
-            <input type="email" onChange={this._handleChange} placeholder="email" name="email" style={this.inputStyle()}/>
-            <input type="submit" value="Subscribe" style={this.buttonStyle()}/>
-          </form>
-        </div>
-      );
-    }
+    // let subscribeComponent = (
+    //   <div style={this.subscribeStyle()}>
+    //     <div style={{alignItems: 'center'}}>{this.state.text}</div>
+    //   </div>
+    // );
+    // if (! this.state.subscribed) {
+    //   subscribeComponent = (
+    //     <div style={this.subscribeStyle()}>
+    //       <div style={{alignItems: 'center'}}>{this.state.text}</div>
+    //       <form onSubmit={this._handleSubmit} style={this.formStyle()}>
+    //         <input type="email" onChange={this._handleChange} placeholder="email" name="email" style={this.inputStyle()}/>
+    //         <input type="submit" value="Subscribe" style={this.buttonStyle()}/>
+    //       </form>
+    //     </div>
+    //   );
+    // }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -112,11 +112,11 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `ai`, `diversity`, `computers`]}
         />
         <Links />
-        {subscribeComponent}
+        {/* {subscribeComponent} */}
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug} >
+            <div style={{marginTop : '40px'}} key={node.fields.slug} >
               <small >{node.frontmatter.date} in </small>
               <small style={{textTransform: 'uppercase', color: '#00688B'}}>
               <Link to={`/tags/${kebabCase(node.frontmatter.tags)}/`}>

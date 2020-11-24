@@ -18,7 +18,7 @@ export default class Links extends React.Component {
             }}
             to={`/`}
           >
-            ESSAYS
+            POSTS
         </Link>
         <Link
             style={{
